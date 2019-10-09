@@ -12,13 +12,13 @@ public class DBConexion extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table usuarios(id integer primary key autoincrement, usuario text, contrasena text)");
-        db.execSQL("insert into usuarios values('admin','admin')");
+        db.execSQL("create table usuarios( codigo integer primary key, usuario text, contrasena text)");
+        db.execSQL("insert into usuarios values(1,'admin','admin')");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("create table usuarios(codigo integer primary key autoincrement,usuario text,contrasena text)");
-        db.execSQL("insert into usuarios values('admin','admin')");
+        db.execSQL("create table usuarios( codigo integer primary key,usuario text,contrasena text)");
+        db.execSQL("insert into usuarios values(1,'admin','admin')");
     }
 }

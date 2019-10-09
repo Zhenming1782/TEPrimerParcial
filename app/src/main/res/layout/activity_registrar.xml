@@ -8,74 +8,66 @@
         tools:context=".Registrar" tools:layout_editor_absoluteY="81dp">
 
     <TextView
+            android:layout_width="77dp"
+            android:layout_height="37dp"
+            android:id="@+id/textView"
+            android:text="REGISTRAR"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="47dp" app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
             android:text="Matricula"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView4"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="86dp" android:layout_marginStart="16dp"/>
+            android:layout_marginTop="104dp" android:layout_marginStart="16dp"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/etcodigo"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="10dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"/>
-    <TextView
-            android:layout_width="77dp"
-            android:layout_height="29dp"
-            android:id="@+id/textView"
-            android:text="REGISTRAR"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="48dp" app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintStart_toStartOf="@+id/textView4" app:layout_constraintTop_toBottomOf="@+id/textView4"
+            android:inputType="number"/>
     <TextView
             android:text="Usuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView2"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="10dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/etcodigo"/>
+            app:layout_constraintStart_toStartOf="@+id/etcodigo" app:layout_constraintTop_toBottomOf="@+id/etcodigo"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/etusuario"
-            app:layout_constraintTop_toTopOf="@+id/textView2" app:layout_constraintStart_toStartOf="@+id/textView2"
-            android:layout_marginTop="17dp"/>
+            app:layout_constraintStart_toStartOf="@+id/textView2" app:layout_constraintTop_toBottomOf="@+id/textView2"/>
     <TextView
             android:text="Contraseña"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView3"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="12dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/etusuario"/>
+            app:layout_constraintStart_toStartOf="@+id/etusuario" app:layout_constraintTop_toBottomOf="@+id/etusuario"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:id="@+id/etcontrasena"
             android:inputType="textPassword"
-            app:layout_constraintStart_toStartOf="@+id/textView3" android:layout_marginTop="5dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"/>
+            app:layout_constraintStart_toStartOf="@+id/textView3" app:layout_constraintTop_toBottomOf="@+id/textView3"/>
     <Button
-            android:text="Registrar"
+            android:text="Crear"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button"
-            android:onClick="registro"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBaseline_toBaselineOf="@+id/button2" android:layout_marginStart="16dp"/>
+            android:layout_height="0dp"
+            android:id="@+id/bguardar"
+            app:layout_constraintTop_toTopOf="@+id/bregresar" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/bregresar"
+            android:layout_marginStart="17dp"/>
     <Button
             android:text="Regresar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button2"
-            android:onClick="salir"
-            android:layout_marginTop="26dp" android:layout_marginStart="26dp"
-            app:layout_constraintTop_toBottomOf="@+id/etcontrasena" app:layout_constraintStart_toEndOf="@+id/button"/>
+            android:layout_height="41dp"
+            android:id="@+id/bregresar"
+            android:layout_marginTop="36dp"
+            app:layout_constraintTop_toBottomOf="@+id/etcontrasena"
+            app:layout_constraintStart_toEndOf="@+id/etcontrasena"/>
 </android.support.constraint.ConstraintLayout>

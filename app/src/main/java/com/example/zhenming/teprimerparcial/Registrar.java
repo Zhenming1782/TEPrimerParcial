@@ -6,10 +6,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class Registrar extends AppCompatActivity {
 
+    Button Guardar, Regresar;
     EditText et1,et2,et3;
 
 
@@ -21,30 +23,30 @@ public class Registrar extends AppCompatActivity {
         et1= (EditText) findViewById(R.id.etcodigo);
         et2= (EditText) findViewById(R.id.etusuario);
         et3= (EditText) findViewById(R.id.etcontrasena);
-    }
+        Guardar = findViewById(R.id.bguardar);
+        Regresar = findViewById(R.id.bregresar);
+        final DBConexion admin=new DBConexion(this,"parcial",null,1);
 
-    public void registro(View v){
+        Guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db= admin.getWritableDatabase();
+                Integer codigo=Integer.parseInt(et1.getText().toString()) ;
+                String usuario=et2.getText().toString();
+                String contrasena=et3.getText().toString();
 
-        DBConexion admin = new DBConexion(this,"parcial",null,1);
-        SQLiteDatabase db= admin.getWritableDatabase();
-        String codigo=et1.getText().toString();
-        String usuario=et2.getText().toString();
-        String contrasena=et3.getText().toString();
+                db.execSQL("insert into usuarios values("+codigo.toString()+",'"+usuario+"','"+contrasena+"')");
 
-        ContentValues values = new ContentValues();
+                db.close();
+                finish();
+            }
+        });
 
-        values.put("codigo",codigo);
-        values.put("usuario",usuario);
-        values.put("contrasena",contrasena);
-
-        db.insert("usuarios",null,values);
-        db.close();
-        finish();
-        //Intent ventana = new Intent(this, MainActivity.class);
-        //startActivity(ventana);
-    }
-
-    public void salir(View v){
-        finish();
+        Regresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }
