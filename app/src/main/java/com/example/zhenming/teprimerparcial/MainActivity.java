@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     String usua=fila.getString(0);
                     String pass=fila.getString(1);
                     if (usuario.equals(usua)&&contrasena.equals(pass)){
-                        Intent ven=new Intent(MainActivity.this, Menu.class);
+                        Intent ven=new Intent(MainActivity.this, Principal.class);
                         startActivity(ven);
                         et1.setText("");
                         et2.setText("");

@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".Registrar">
         </activity>
-        <activity android:name=".Menu">
+        <activity android:name=".Principal">
         </activity>
     </application>
 
